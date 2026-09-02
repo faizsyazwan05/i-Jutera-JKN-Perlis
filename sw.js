@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-jkn-perlis-v1';
+const CACHE_NAME = 'pwa-jkn-perlis-v2';
 const urlsToCache = [
   './',
   './index.html',

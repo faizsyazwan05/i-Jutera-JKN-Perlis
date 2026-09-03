@@ -3,55 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>i-JUTERA PERLIS</title>
-  
-  <!-- Meta Tags PWA -->
+  <title>i-JUTERA JKNPs</title>
   <meta name="theme-color" content="#111a2e">
   <link rel="manifest" href="manifest.json">
-  
-  <!-- Ikon -->
   <link rel="icon" type="image/png" href="icon-512.png">
   <link rel="apple-touch-icon" href="icon-512.png">
-
   <style>
-    /* Hilangkan margin dan pastikan tinggi 100% skrin */
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: #111a2e; /* Warna latar belakang semasa loading */
-    }
-    
-    /* Iframe memenuhi 100% ruang tanpa sempadan */
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #111a2e; }
+    /* Tukar CSS iFrame supaya iOS/Android boleh scroll di dalamnya */
+    iframe { width: 100%; height: 100%; border: none; overflow-y: auto; -webkit-overflow-scrolling: touch; }
   </style>
 </head>
 <body>
-
-  <!-- GANTIKAN URL DI BAWAH DENGAN PAUTAN WEB APP GOOGLE APPS SCRIPT ANDA -->
   <iframe src="https://script.google.com/a/macros/moh.gov.my/s/AKfycbyHO0-QhY9n4K14aV5vIFeWjN1OW9Pz428HCu-ILeQsiLJwKQro9FQNZO_KOX1P69XI/exec" allow="geolocation; microphone; camera"></iframe>
-
-  <!-- Skrip Pendaftaran Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then((registration) => {
-            console.log('Service Worker berjaya didaftarkan dengan skop:', registration.scope);
-          })
-          .catch((error) => {
-            console.error('Pendaftaran Service Worker gagal:', error);
-          });
+        navigator.serviceWorker.register('sw.js');
       });
     }
   </script>
-
 </body>
 </html>
